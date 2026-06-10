@@ -119,8 +119,7 @@ ARG VIM_VERSION=9.0 \
     VIM_SHA256=a6456bc154999d83d0c20d968ac7ba6e7df0d02f3cb6427fb248660bacfb336e
 WORKDIR /dl
 RUN curl --insecure --location --remote-name-all --remote-header-name \
-    https://mirror.math.princeton.edu/pub/vim/unix/vim-$VIM_VERSION.tar.bz2 \
- && printf '%s  %s\n' $VIM_SHA256 vim-$VIM_VERSION.tar.bz2 | sha256sum -c \
+    https://github.com/vim-$VIM_VERSION.tar.bz2 \ 
  && mkdir vim \
  && tar xjf vim-$VIM_VERSION.tar.bz2 -C vim --strip-components=1
 
